@@ -1,26 +1,97 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+body{
+	background-color : #F1E4CD;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@font-face {
+	font-family: 'Oswald-Regular';
+	src: url(../assets/font/Oswald/static/Oswald-Regular.ttf);
 }
 
-* {
-  box-sizing: border-box;
+@font-face {
+	font-family: 'Oswald-Bold';
+	src: url(../assets/font/Oswald/static/Oswald-Bold.ttf);
+}
+@font-face {
+	font-family: 'Oswald-SemiBold';
+	src: url(../assets/font/Oswald/static/Oswald-SemiBold.ttf);
+}
+.oswald-reg{
+	font-family: 'Oswald-Regular';
+}
+.oswald-bold{
+	font-family: 'Oswald-Bold';
+}
+.oswald-semibold{
+	font-family: 'Oswald-SemiBold';
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.Typewriter{
+	font-family: 'Oswald-Regular';
+	font-size: 4rem;
+	color: #c5352c;
 }
+
+.box-1 { background-color: #FF6766; width: 15rem;}
+
+
+.button {
+	line-height: 50px;
+	height: 50px;
+	text-align: center;
+	width: 15rem;
+	cursor: pointer;
+}
+.btn-one {
+	color: #FFF;
+	transition: all 0.3s;
+	position: relative;
+}
+.btn-one span {
+	transition: all 0.3s;
+}
+.btn-one::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #c5352c;
+	border-bottom-color: #c5352c;
+	transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+	letter-spacing: 2px;
+}
+.btn-one:hover::before {
+	opacity: 1;	
+	transform: scale(1, 1);	
+}
+.btn-one::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color: rgba(255,255,255,0.1);
+}
+.btn-one:hover::after {
+	opacity: 0;	
+	transform: scale(0.1, 1);
+}
+
+@tailwind utilities;
