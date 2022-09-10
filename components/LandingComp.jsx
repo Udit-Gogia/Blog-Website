@@ -21,11 +21,11 @@ export default function LandingComp() {
 				/>
 			</div>
 
-			<div className="mt-6">
-					<p className="text-xl">Share your thoughts with the world.</p>
+			<div className="mt-12">
+					<p className="text-xl  oswald-reg tracking-wider">Share your thoughts with the world.</p>
 			</div>
 
-			<div className="mt-16">
+			<div className="mt-6">
 				{/* <a href="#" className="text-darkpinkish p-4 rounded-xl text-2xl border-brickred px-12 border-2 ">Get Started</a>  */}
 
 				<div class="box-1">
@@ -36,7 +36,7 @@ export default function LandingComp() {
 			</div>
 		</div>
 
-			<div className="w-[35rem]">
+			<div className="xl:w-[35rem] sm:w-0">
 				<Image src={Blog} width="650" height="650" alt="img-blog" ></Image>
 		</div>
 

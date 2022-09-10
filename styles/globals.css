@@ -4,6 +4,7 @@
 
 body{
 	background-color : #F1E4CD;
+	background-image : url(../assets//images/Contour\ Line.svg);	
 }
 
 @font-face {
@@ -31,7 +32,7 @@ body{
 
 .Typewriter{
 	font-family: 'Oswald-Regular';
-	font-size: 4rem;
+	font-size: 3.5rem;
 	color: #c5352c;
 }
 
