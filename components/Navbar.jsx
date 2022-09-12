@@ -1,21 +1,56 @@
-import style from '../styles/Navbar.module.css';
+import style from "../styles/Navbar.module.css";
+import Link from "next/link";
 
-export default function Home() {
+function Home() {
 	return (
 		<div className="flex justify-between border-b-2 border-b-brickred py-4 shadow-sm bg-lightbeige">
-		  <div>
-					<p className="text-2xl ml-16 oswald-bold tracking-wider text-brickred">Blogs<span className="text-black">Page</span></p>
-		  </div>
+			<div>
+				<p className="text-2xl ml-[6.3rem] oswald-bold tracking-wider text-brickred">
+					Blog<span className="text-black">Spot</span>
+				</p>
+			</div>
 
-		  <div>
-				<ul  className="flex px-4 oswald-reg tracking-wider">
-				<li className={`text-lg px-3 border-l-4 border-darkpinkish font-semibold tracking-wider ${style.button}`}>Home</li>
-				<li className={`text-lg px-3 border-l-4 border-darkpinkish font-semibold tracking-wider ${style.button}`}>New Blog</li>
-				<li className={`text-lg px-3 border-l-4 border-darkpinkish font-semibold tracking-wider ${style.button}`}>User</li>
-				<li className={`text-lg px-3 border-x-4 border-darkpinkish font-semibold tracking-wider ${style.button}`}>Developer</li>
-			</ul>
-		  </div>
-	  </div>
-	)
-  }
-  
+			<div className="mr-[6.3rem]">
+				<ul className="flex px-4 oswald-reg tracking-wider">
+					<li
+						className={`text-lg px-3 border-l-4 border-darkpinkish font-semibold tracking-wider ${style.button}`}
+					>
+						<Link href="/">Home</Link>
+					</li>
+					<li
+						className={`text-lg px-3 border-l-4 border-darkpinkish font-semibold tracking-wider ${style.button}`}
+					>
+						<Link href="/Blog">Blogs</Link>
+					</li>
+					<li
+						className={`text-lg px-3 border-l-4 border-darkpinkish font-semibold tracking-wider ${style.button}`}
+					>
+						<Link
+							href={{
+								pathname: "/NewBlog",
+								// query:
+								// 	{
+								// 		setAuth
+								// 	}
+							}}
+						>
+							New Blog
+						</Link>
+					</li>
+					<li
+						className={`text-lg px-3 border-x-4 border-darkpinkish font-semibold tracking-wider ${style.button}`}
+					>
+						<a
+							href="https://udit-gogia.github.io/Portfolio-Website/"
+							target="_blank"
+						>
+							Developer
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	);
+}
+
+export default Home;

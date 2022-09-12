@@ -11,6 +11,7 @@ module.exports = {
         'darkpinkish' : '#FF6766',
         'lightbeige' : '#F1E4CD',
         'brickred' : '#c5352c',
+        'lightblueish' : '#39d0df',
       }
     },
   },
