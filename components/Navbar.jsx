@@ -28,10 +28,6 @@ function Home() {
 						<Link
 							href={{
 								pathname: "/NewBlog",
-								// query:
-								// 	{
-								// 		setAuth
-								// 	}
 							}}
 						>
 							New Blog

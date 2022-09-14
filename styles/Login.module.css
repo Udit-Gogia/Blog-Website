@@ -40,10 +40,12 @@
 	height: 100%;
 	z-index: 1;
 	transition: all 0.3s;
-	background-color: rgba(196, 53, 43, 0.1);
+	background-color: rgba(196, 53, 43, 0.2);
 	border-radius: 30px;
 }
 .btnTwo:hover::after {
-	transform: scale(1, 0.6);
-	border-radius: 0px;
+	transform: scale(0.7, 0.7);
+	border-radius: 50px;
 }
+
+
