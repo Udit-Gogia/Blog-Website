@@ -8,7 +8,7 @@ export default function LandingComp() {
 		<div className="flex w-screen justify-around ">
 			<div className="flex flex-col justify-center p-10 mt-28">
 				<div className="my-6">
-					<h1 className="text-7xl oswald-bold ">Write what makes you</h1>
+					<h1 className="text-6xl teresa-bold ">Write what makes you</h1>
 				</div>
 
 				<div>
@@ -23,7 +23,7 @@ export default function LandingComp() {
 				</div>
 
 				<div className="mt-12">
-					<p className="text-xl  oswald-reg tracking-wider">
+					<p className="text-2xl oswald-reg">
 						Share your thoughts with the world.
 					</p>
 				</div>

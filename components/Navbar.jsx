@@ -25,13 +25,7 @@ function Home() {
 					<li
 						className={`text-lg px-3 border-l-4 border-darkpinkish font-semibold tracking-wider ${style.button}`}
 					>
-						<Link
-							href={{
-								pathname: "/NewBlog",
-							}}
-						>
-							New Blog
-						</Link>
+						<Link href="/NewBlog">New Blog</Link>
 					</li>
 					<li
 						className={`text-lg px-3 border-x-4 border-darkpinkish font-semibold tracking-wider ${style.button}`}
@@ -39,6 +33,7 @@ function Home() {
 						<a
 							href="https://udit-gogia.github.io/Portfolio-Website/"
 							target="_blank"
+							// rel="noreferrer"
 						>
 							Developer
 						</a>

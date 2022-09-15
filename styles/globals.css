@@ -20,6 +20,14 @@ body {
 	font-family: "Oswald-SemiBold";
 	src: url(../assets/font/Oswald/static/Oswald-SemiBold.ttf);
 }
+@font-face {
+	font-family: "Teresa-Bold";
+	src: url(../assets/font/Teresa/Teresa-Bold.ttf);
+}
+@font-face {
+	font-family: "Teresa-SemiBold";
+	src: url(../assets/font/Teresa/Teresa-Semibold.ttf);
+}
 .oswald-reg {
 	font-family: "Oswald-Regular";
 }
@@ -29,9 +37,15 @@ body {
 .oswald-semibold {
 	font-family: "Oswald-SemiBold";
 }
+.teresa-semibold {
+	font-family: "Teresa-Semibold";
+}
+.teresa-bold {
+	font-family: "Teresa-Bold";
+}
 
 .Typewriter {
-	font-family: "Oswald-Regular";
+	font-family: "teresa-semibold";
 	font-size: 3.5rem;
 	color: #c5352c;
 }
@@ -114,5 +128,13 @@ textarea::-webkit-scrollbar-thumb {
 	border-radius: 20px;
 	padding: 2rem;
 }
-
+::-webkit-scrollbar {
+	width: 1em;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #ff6766;
+	border: 3px solid #f1e4cd;
+	border-radius: 20px;
+		padding: 2rem;
+}
 @tailwind utilities;
