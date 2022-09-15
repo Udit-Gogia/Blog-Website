@@ -33,7 +33,7 @@ function Home() {
 						<a
 							href="https://udit-gogia.github.io/Portfolio-Website/"
 							target="_blank"
-							// rel="noreferrer"
+							rel="noreferrer"
 						>
 							Developer
 						</a>
