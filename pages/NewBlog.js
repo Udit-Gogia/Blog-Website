@@ -1,7 +1,11 @@
 import Navbar from "../components/Navbar";
 import { useState } from "react";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../firebase";
+import { useRouter } from "next/router";
 
 export default function Login() {
+	const router = useRouter();
 	const [title, setTitle] = useState("");
 	const [story, setStory] = useState("");
 	const [bloggerName, setbloggerName] = useState("");
@@ -15,21 +19,44 @@ export default function Login() {
 	function handleBloggerChange(e) {
 		setbloggerName(e.target.value);
 	}
+	function handlefileUpload(e) {
+		setCoverImg(e.target.files[0]);
+		console.log(e.target.files[0]);
+		setFileUpload(true);
+	}
+
+	// const blogsCollectionRef1 = collection(db, "Blogs");
+	const blogsCollectionRef2 = collection(db, "Blogs");
+	//Specifying the collection where each blog will be stored.
+
 	function submit() {
-		console.log("Submit func", title, story, bloggerName);
+		setTitle("");
+		setStory("");
+		setbloggerName("");
+		const d = new Date();
+		const date = d.toDateString();
+		// alert(`${title} ${story} ${bloggerName} ${date}`);
+
+		// parametes it takes - 1. collection to be targeted -2 data that has to be added.
+		addDoc(blogsCollectionRef2, { title, story, bloggerName, date });
+		// alert("uploading on 1 done");
+		// addDoc(blogsCollectionRef2, { title, story, bloggerName, date });
+
+		router.push("/Blog");
 	}
 
 	return (
 		<>
 			<Navbar />
 
-			<div className=" flex flex-col items-center mt-2 justify-center">
-				<div className="">
-					<h1 className="text-3xl oswald-bold text-center text-brickred bg-lightbeige px-4 ">
-						Start Sharing !
+			<div className="flex items-center mt-2 justify-evenly sm:flex-col lg:flex-row">
+				<div>
+					<h1 className="lg:text-5xl oswald-bold text-center text-brickred bg-lightbeige sm:text-2xl p-4 stroke-lightpinkish">
+						Start
+						<br /> Sharing !
 					</h1>
 				</div>
-				<div className="bg-lightpinkish flex flex-col lg:w-[70vw] rounded-xl mt-4 justify-center">
+				<div className="bg-lightpinkish flex flex-col basis-3/4 rounded-xl mt-4 justify-center ">
 					<div>
 						<form action="" method="post">
 							<div className="flex items-center">
@@ -44,7 +71,7 @@ export default function Login() {
 												value={title}
 												onChange={handleTitleChange}
 												required
-												minLength={5}
+												// minLength={5}
 											/>
 											<span className="oswald-reg text-3xl text-brickred absolute left-5 -top-5 px-1 transition duration-300 input-text -mx-1 ">
 												Title:
@@ -81,17 +108,19 @@ export default function Login() {
 													id="dropzone-file"
 													type="file"
 													className="hidden"
+													onChange={handlefileUpload}
 												/>
 											</label>
 										</div>
 									</div>
 								</div>
 							</div>
+
 							<div className="flex items-center my-4 justify-center flex-col w-full">
 								<label className="w-11/12 relative cursor-pointer">
 									<textarea
 										placeholder="Input"
-										className="w-full h-[15rem] text-2xl p-4 border-opacity-70 outline-none rounded-xl focus:border-darkpinkish bg-lightbeige text-brickred font-semibold placeholder-gray-300 placeholder-opacity-0 transition-duration-[300] resize-none"
+										className="w-full h-[15rem] text-lg p-4 border-opacity-70 outline-none rounded-xl focus:border-darkpinkish bg-lightbeige text-brickred font-semibold placeholder-gray-300 placeholder-opacity-0 transition-duration-[300] resize-none"
 										name="story"
 										value={story}
 										onChange={handleStoryChange}
@@ -117,13 +146,13 @@ export default function Login() {
 										></input>
 									</div>
 
-									<button
+									<p
 										type="submit"
-										className="bg-lightbeige text-brickred font-bold oswald-semibold p-4 rounded-xl text-2xl m-5 mr-0 tracking-wider basis-1/2 transition duration-300 hover:bg-brickred hover:text-lightbeige"
+										className="bg-lightbeige text-brickred font-bold oswald-semibold p-4 rounded-xl text-2xl m-5 mr-0 tracking-wider basis-1/2 transition duration-300 hover:bg-brickred hover:text-lightbeige text-center"
 										onClick={submit}
 									>
 										Done
-									</button>
+									</p>
 								</div>
 							</div>
 						</form>

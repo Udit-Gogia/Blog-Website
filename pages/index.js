@@ -1,10 +1,9 @@
-import Navbar from '../components/Navbar'
-import Home from '../pages/Home'
+import Home from "../pages/Home";
 
 export default function Index() {
-  return (
-    <div>
-      <Home />
-    </div>
-  )
+	return (
+		<div>
+			<Home />
+		</div>
+	);
 }

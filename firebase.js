@@ -1,18 +1,17 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAuth , GoogleAuthProvider} from "firebase/auth"
-import { getFirestore } from "firebase/firestore"
+import firebase, { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBZ_V_YGWhM2YH4aoBrEOBNeLRm_yflirM",
-  authDomain: "blogspot-c5da9.firebaseapp.com",
-  projectId: "blogspot-c5da9",
-  storageBucket: "blogspot-c5da9.appspot.com",
-  messagingSenderId: "874745701180",
-  appId: "1:874745701180:web:6d0fff9d7b00766e2b3439"
+	apiKey: "AIzaSyBZ_V_YGWhM2YH4aoBrEOBNeLRm_yflirM",
+	authDomain: "blogspot-c5da9.firebaseapp.com",
+	projectId: "blogspot-c5da9",
+	storageBucket: "blogspot-c5da9.appspot.com",
+	messagingSenderId: "874745701180",
+	appId: "1:874745701180:web:6d0fff9d7b00766e2b3439",
 };
 
 // Initialize Firebase

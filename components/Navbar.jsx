@@ -5,7 +5,7 @@ function Home() {
 	return (
 		<div className="flex justify-between border-b-2 border-b-brickred py-4 shadow-sm bg-lightbeige">
 			<div>
-				<p className="text-2xl ml-[6.3rem] oswald-bold tracking-wider text-brickred">
+				<p className="text-2xl ml-[6.3vw] oswald-bold tracking-wider text-brickred">
 					Blog<span className="text-black">Spot</span>
 				</p>
 			</div>
