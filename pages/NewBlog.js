@@ -3,7 +3,8 @@ import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase";
 import { useRouter } from "next/router";
-import { storage } from "../firebase";
+import Swal from "sweetalert2";
+import "animate.css";
 
 export default function Login() {
 	const router = useRouter();
@@ -25,18 +26,53 @@ export default function Login() {
 	//Specifying the collection where each blog will be stored.
 
 	function submit() {
-		e.preventDefault();
-		setTitle("");
-		setStory("");
-		setbloggerName("");
+		if (title != "" || story != "" || bloggerName != "") {
+			setTitle("");
+			setStory("");
+			setbloggerName("");
 
-		const d = new Date();
-		const date = d.toDateString();
+			const d = new Date();
+			const date = d.toDateString();
 
-		// parametes it takes - 1. collection to be targeted -2 data that has to be added.
-		addDoc(blogs, { title, story, bloggerName, date });
-
-		router.push("/Blog");
+			// parametes it takes - 1. collection to be targeted -2 data that has to be added.
+			addDoc(blogs, { title, story, bloggerName, date });
+			Swal.fire({
+				icon: "success",
+				showDenyButton: true,
+				title: "Your Blog has been shared.",
+				width: 600,
+				padding: "3em",
+				backdrop: "rgba(0,0,0,0.4)",
+				confirmButtonColor: "#c5352c",
+				confirmButtonText: "See other Blogs.",
+				denyButtonText: `Write another Blog`,
+				iconColor: "#c5352c",
+				color: "#c5352c",
+				background: "#F1E4CD",
+				showClass: {
+					popup: "animate__backInRight animate__animated",
+				},
+			}).then((result) => {
+				if (result.isConfirmed) {
+					router.push("/Blog");
+				}
+			});
+		} else {
+			Swal.fire({
+				icon: "info",
+				title: "Please fill all the fields.",
+				width: 600,
+				padding: "3em",
+				backdrop: "rgba(0,0,0,0.4)",
+				confirmButtonColor: "#c5352c",
+				iconColor: "#c5352c",
+				color: "#c5352c",
+				background: "#F1E4CD",
+				showClass: {
+					popup: "animate__backInRight animate__animated",
+				},
+			});
+		}
 	}
 
 	return (

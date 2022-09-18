@@ -26,7 +26,7 @@ export default function Blog() {
 					return (
 						<div
 							key={index}
-							className="bg-brickred p-4 m-4 rounded-xl shadow-2xl lg:h-[40vh] sm:h-[vh] max-w-6xl flex flex-col justify-between cursor-default"
+							className="bg-brickred p-4 m-4 rounded-xl shadow-2xl  max-w-6xl flex flex-col justify-between cursor-default"
 						>
 							<h1 className="text-3xl text-lightbeige font-bold text-center my-4 underline">
 								{blog.title}
