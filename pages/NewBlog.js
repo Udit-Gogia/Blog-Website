@@ -3,6 +3,7 @@ import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase";
 import { useRouter } from "next/router";
+import { storage } from "../firebase";
 
 export default function Login() {
 	const router = useRouter();
@@ -19,28 +20,21 @@ export default function Login() {
 	function handleBloggerChange(e) {
 		setbloggerName(e.target.value);
 	}
-	function handlefileUpload(e) {
-		setCoverImg(e.target.files[0]);
-		console.log(e.target.files[0]);
-		setFileUpload(true);
-	}
 
-	// const blogsCollectionRef1 = collection(db, "Blogs");
-	const blogsCollectionRef2 = collection(db, "Blogs");
+	const blogs = collection(db, "Blogs");
 	//Specifying the collection where each blog will be stored.
 
 	function submit() {
+		e.preventDefault();
 		setTitle("");
 		setStory("");
 		setbloggerName("");
+
 		const d = new Date();
 		const date = d.toDateString();
-		// alert(`${title} ${story} ${bloggerName} ${date}`);
 
 		// parametes it takes - 1. collection to be targeted -2 data that has to be added.
-		addDoc(blogsCollectionRef2, { title, story, bloggerName, date });
-		// alert("uploading on 1 done");
-		// addDoc(blogsCollectionRef2, { title, story, bloggerName, date });
+		addDoc(blogs, { title, story, bloggerName, date });
 
 		router.push("/Blog");
 	}
@@ -61,7 +55,7 @@ export default function Login() {
 						<form action="" method="post">
 							<div className="flex items-center">
 								<div className="flex  items-center my-4 mx-12 w-full sm:flex-col lg:flex-row">
-									<div className="basis-2/3 h-40">
+									<div className="w-full h-40">
 										<label className="relative cursor-pointer rounded-lg">
 											<input
 												type="text"
@@ -78,7 +72,7 @@ export default function Login() {
 											</span>
 										</label>
 									</div>
-									<div className="flex items-center my-4 ml-[1.5vw] basis-1/3">
+									{/* <div className="flex items-center my-4 ml-[1.5vw] basis-1/3">
 										<div className="flex justify-center items-center w-full">
 											<label className="flex flex-col justify-center items-center w-full h-40 bg-lightbeige  rounded-lg cursor-pointer">
 												<div className="flex flex-col justify-center items-center pt-5 pb-6">
@@ -97,11 +91,16 @@ export default function Login() {
 															d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
 														></path>
 													</svg>
-													<p className="mb-2 text-sm text-brickred dark:text-brickred px-4">
-														<span className="font-semibold">Cover Image</span>
-													</p>
-													<p className="mb-2 text-sm text-brickred dark:text-brickred px-4">
-														<span>Click to upload</span>
+													<p className="mb-2 text-sm text-brickred dark:text-brickred px-4 text-center font-semibold">
+														{imageTitle ? (
+															imageTitle
+														) : (
+															<span>
+																Cover Image
+																<br />
+																Click to upload
+															</span>
+														)}
 													</p>
 												</div>
 												<input
@@ -109,10 +108,11 @@ export default function Login() {
 													type="file"
 													className="hidden"
 													onChange={handlefileUpload}
+													// value={image}
 												/>
 											</label>
 										</div>
-									</div>
+									</div> */}
 								</div>
 							</div>
 

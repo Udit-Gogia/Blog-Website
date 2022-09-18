@@ -11,7 +11,6 @@ export default function Blog() {
 		const getBlogs = async () => {
 			const collection = await getDocs(blogsCollectionRef);
 			const documents = collection.docs.map((document) => document.data());
-			// console.log(documents);
 			setBlogs(documents);
 		};
 
@@ -22,25 +21,25 @@ export default function Blog() {
 		<div>
 			<Navbar />
 
-			<div className="flex flex-wrap justify-center ">
+			<div className="flex flex-wrap flex-col-reverse items-center">
 				{blogs.map((blog, index) => {
 					return (
 						<div
 							key={index}
-							className="bg-brickred p-4 m-6 rounded-xl shadow-2xl basis-[40%] "
+							className="bg-brickred p-4 m-4 rounded-xl shadow-2xl lg:h-[40vh] sm:h-[vh] max-w-6xl flex flex-col justify-between cursor-default"
 						>
-							<h1 className="text-3xl text-lightbeige font-bold text-center">
+							<h1 className="text-3xl text-lightbeige font-bold text-center my-4 underline">
 								{blog.title}
 							</h1>
 
-							<p className="text-lightbeige oswald-reg text-lg my-4">
+							<p className="text-lightbeige oswald-reg text-xl tracking-wide my-4">
 								{blog.story}
 							</p>
 							<div className="flex justify-between mt-4 bg-lightbeige text-brickred p-2 rounded-lg ">
-								<p className=" oswald-semibold text-lg">
+								<p className=" oswald-semibold text-lg pr-4">
 									By <span className="underline">{blog.bloggerName}</span>
 								</p>
-								<p className=" oswald-semibold text-lg">{blog.date}</p>
+								<p className=" oswald-semibold text-lg pl-4">{blog.date}</p>
 							</div>
 						</div>
 					);

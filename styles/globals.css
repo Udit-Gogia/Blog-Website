@@ -45,7 +45,7 @@ body {
 }
 
 .Typewriter {
-	font-family: "teresa-semibold";
+	font-family: "oswald-semibold";
 	font-size: 3.5rem;
 	color: #c5352c;
 }
@@ -135,6 +135,6 @@ textarea::-webkit-scrollbar-thumb {
 	background-color: #ff6766;
 	border: 3px solid #f1e4cd;
 	border-radius: 20px;
-		padding: 2rem;
+	padding: 2rem;
 }
 @tailwind utilities;
