@@ -3,32 +3,32 @@ import Link from "next/link";
 
 function Home() {
 	return (
-		<div className="flex justify-between border-b-2 border-b-brickred py-4 shadow-sm bg-lightbeige">
+		<div className="flex justify-between border-b-2 border-b-brickred py-4 shadow-sm bg-lightbeige flex-col lg:flex-row">
 			<div>
-				<p className="text-2xl ml-[6.3vw] oswald-bold tracking-wider text-brickred">
+				<p className="text-2xl ml-[6.3vw] oswald-bold tracking-wider text-brickred sm:text-center sm:mb-4">
 					Blog<span className="text-black">Spot</span>
 				</p>
 			</div>
 
-			<div className="mr-[6.3rem]">
-				<ul className="flex px-4 oswald-reg tracking-wider">
+			<div className="lg:mr-[3rem]">
+				<ul className="flex px-4 oswald-reg tracking-wider sm:px-2 justify-center ">
 					<li
-						className={`text-lg px-3 border-l-4 border-darkpinkish font-semibold tracking-wider ${style.button}`}
+						className={`lg:text-lg px-3 lg:border-l-4 border-darkpinkish font-semibold lg:tracking-wider ${style.button} sm:text-md sm:border-l-2`}
 					>
 						<Link href="/">Home</Link>
 					</li>
 					<li
-						className={`text-lg px-3 border-l-4 border-darkpinkish font-semibold tracking-wider ${style.button}`}
+						className={`lg:text-lg px-3 lg:border-l-4 border-darkpinkish font-semibold lg:tracking-wider ${style.button} sm:text-md sm:border-l-2`}
 					>
 						<Link href="/Blog">Blogs</Link>
 					</li>
 					<li
-						className={`text-lg px-3 border-l-4 border-darkpinkish font-semibold tracking-wider ${style.button}`}
+						className={`lg:text-lg px-3 lg:border-l-4 border-darkpinkish font-semibold lg:tracking-wider ${style.button} sm:text-md sm:border-l-2`}
 					>
 						<Link href="/NewBlog">New Blog</Link>
 					</li>
 					<li
-						className={`text-lg px-3 border-x-4 border-darkpinkish font-semibold tracking-wider ${style.button}`}
+						className={`lg:text-lg px-3 lg:border-x-4 border-darkpinkish font-semibold lg:tracking-wider ${style.button} sm:text-md sm:border-x-2`}
 					>
 						<a
 							href="https://udit-gogia.github.io/Portfolio-Website/"

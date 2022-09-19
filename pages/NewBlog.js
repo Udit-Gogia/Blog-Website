@@ -79,14 +79,14 @@ export default function Login() {
 		<>
 			<Navbar />
 
-			<div className="flex items-center mt-2 justify-evenly sm:flex-col lg:flex-row">
+			<div className="flex items-center mt-2 justify-evenly sm:flex-col lg:flex-row sm:mx-4 lg:mx-0">
 				<div>
 					<h1 className="lg:text-5xl oswald-bold text-center text-brickred bg-lightbeige sm:text-2xl p-4 stroke-lightpinkish">
 						Start
 						<br /> Sharing !
 					</h1>
 				</div>
-				<div className="bg-lightpinkish flex flex-col basis-3/4 rounded-xl mt-4 justify-center ">
+				<div className="bg-lightpinkish flex flex-col basis-3/4 rounded-xl mt-4 justify-center  ">
 					<div>
 						<form action="" method="post">
 							<div className="flex items-center">
@@ -96,7 +96,7 @@ export default function Login() {
 											<input
 												type="text"
 												placeholder="Title "
-												className="w-full h-full p-4 oswald-semibold text-4xl text-brickred border-lightbeige border-4 rounded-xl border-opacity-70 outline-none focus:border-solid border-double placeholder-gray-300 placeholder-opacity-0 transition-duration-200 bg-transparent tracking-wider text-center "
+												className="w-full h-full p-4 oswald-semibold sm:text-lg lg:text-4xl text-brickred border-lightbeige border-4 rounded-xl border-opacity-70 outline-none focus:border-solid border-double placeholder-gray-300 placeholder-opacity-0 transition-duration-200 bg-transparent tracking-wider text-center "
 												name="title"
 												value={title}
 												onChange={handleTitleChange}
@@ -153,7 +153,7 @@ export default function Login() {
 							</div>
 
 							<div className="flex items-center my-4 justify-center flex-col w-full">
-								<label className="w-11/12 relative cursor-pointer">
+								<label className="lg:w-11/12 relative cursor-pointer sm:w-9/12">
 									<textarea
 										placeholder="Input"
 										className="w-full h-[15rem] text-lg p-4 border-opacity-70 outline-none rounded-xl focus:border-darkpinkish bg-lightbeige text-brickred font-semibold placeholder-gray-300 placeholder-opacity-0 transition-duration-[300] resize-none"
@@ -167,9 +167,9 @@ export default function Login() {
 									</span>
 								</label>
 
-								<div className="flex w-full justify-between px-12 mt-4">
-									<div className=" bg-brickred px-4 rounded-xl my-auto basis-1/2">
-										<span className="text-lightbeige text-lg font-bold tracking-wider py-4">
+								<div className="flex w-full justify-between px-12 mt-4 lg:flex-row sm:flex-col">
+									<div className=" bg-brickred px-4 rounded-xl my-auto basis-1/2 sm:flex lg:block">
+										<span className="text-lightbeige text-lg font-bold tracking-wider lg:py-4 sm:py-2 sm:mr-2 lg:mr-0">
 											By:{" "}
 										</span>
 
@@ -178,13 +178,13 @@ export default function Login() {
 											value={bloggerName}
 											onChange={handleBloggerChange}
 											required
-											className="w-11/12 bg-transparent border-b-2 focus:outline-none border-lightbeige tracking-wide text-lightbeige text-xl pb-1 teresa-semibold my-4 text-center"
+											className="w-11/12 bg-transparent border-b-2 focus:outline-none border-lightbeige tracking-wide text-lightbeige text-xl pb-1 teresa-semibold lg:my-4 sm:my-2 text-center"
 										></input>
 									</div>
 
 									<p
 										type="submit"
-										className="bg-lightbeige text-brickred font-bold oswald-semibold p-4 rounded-xl text-2xl m-5 mr-0 tracking-wider basis-1/2 transition duration-300 hover:bg-brickred hover:text-lightbeige text-center"
+										className="bg-lightbeige text-brickred font-bold oswald-semibold sm:p-2 lg:p-4 rounded-xl text-2xl sm:my-4 lg:m-5 mr-0 tracking-wider basis-1/2 transition duration-300 hover:bg-brickred hover:text-lightbeige text-center"
 										onClick={submit}
 									>
 										Done
